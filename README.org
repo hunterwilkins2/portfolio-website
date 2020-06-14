@@ -1,3 +1,3 @@
 * Portfolio Website
   A website for displaying my resume and projects I have worked on.
-  Visit at: http://hunterwilkins.dev
+  Visit at: https://hunterwilkins.dev
