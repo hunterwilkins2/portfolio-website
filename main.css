@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+:root {
+    --main-bg-color: #24305E;
+    --secondary-bg-color: #374785;
+    --dominate-color: #F76C6C;
+    --accent-color: #F8E9A1;
+    --font-color: #FFFFFF;
+}
+
 /*Start global*/
 * {
     margin: 0;
@@ -9,13 +18,14 @@
 html {
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
-    color: #eee;
+    color: var(--font-color);
 }
 
 body {
     width: 100%;
     height: 100%;
-    background: url("images/sitebg.jpg") no-repeat center fixed;
+    /* background: url("images/sitebg.jpg") no-repeat center fixed; */
+    background-color: var(--main-bg-color);
     background-size: cover;
 }
 
@@ -25,7 +35,7 @@ section {
 
 a {
     text-decoration: none;
-    color: #eee;
+    color: var(--font-color);
 }
 
 p {
@@ -106,7 +116,7 @@ header {
     position: fixed;
     top: -100vh;
     z-index: 50;
-    background-color: #16162d;
+    background-color: var(--secondary-bg-color);
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     transition: all 650ms cubic-bezier(1,0,0,1);
@@ -134,7 +144,7 @@ li {
 
 .nav-link:hover,
 .nav-link:focus {
-    background: linear-gradient(to top, #ffe838, #fd57bf);
+    background: linear-gradient(to top, var(--dominate-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -163,7 +173,7 @@ li {
 }
 
 .bar {
-    background: linear-gradient(to right, #ffe838, #fd57bf);
+    background: linear-gradient(to right, var(--accent-color), var(--dominate-color));
     width: 100%;
     height: 4px;
     border-radius: 0.8rem;
@@ -206,7 +216,7 @@ li {
 .landing-text h1 {
     font-size: 20rem;
     font-family: 'Dancing Script', cursive;
-    background: linear-gradient(to top, #ffe838, #fd57bf);
+    background: linear-gradient(to top, var(--dominate-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 1rem;
@@ -304,15 +314,15 @@ li {
 .icon-container {
     width: 10rem;
     height: 10rem;
-    border: 3px solid #ffe838;
-    background-color: #fd57bf;
+    border: 3px solid var(--accent-color);
+    background-color: var(--dominate-color);
     margin-bottom: 2rem;
     display: flex;
     transform: rotate(45deg);
 }
 
 .icon-container i {
-    color: #ffe838;
+    color: var(--accent-color);
     font-size: 5rem;
     margin: auto;
     transform: rotate(-45deg);
@@ -367,113 +377,11 @@ li {
 }
 /*End services*/
 
-/*Start timeline*/
-.timeline ul {
-    border-left: 4px solid #ffe838;
-    border-radius: 0.8rem;
-    background-color: rgba(0,0,0,0,0.05);
-    margin: 0 auto;
-    position: relative;
-    padding: 5rem;
-    list-style: none;
-    text-align: left;
-    width: 70%;
-}
-
-.timeline h1 {
-    font-szie: 2rem;
-    text-transform: uppercase;
-    font-weight: 1rem;
-    margin-bottom: 1rem;
-    opacity: 0.3;
-}
-
-.timeline .date {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    position: relative;
-}
-
-.timeline .date:last-of-type {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: none;
-}
-
-.timeline .date::before,
-.timeline .date::after{
-    position: absolute;
-    display: block;
-    top: 50%;
-    transform: translateX(-50%);
-}
-
-.timeline .date::before {
-    content: attr(data-date);
-    left: -21rem;
-    text-align: right;
-    min-width: 12rem;
-    font-size: 1.5rem;
-}
-
-.timeline .date::after {
-    content: '';
-    box-shadow: 0 0 0 4px #fd57bf;
-    border-radius: 100%;
-    left: -7.2rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: #313535;
-}
-/*End timeline*/
-
-/*Start contact*/
-.contact {
-    background-color: #221e3f;
-}
-
-form {
-    width: 70%;
-    margin: 0 auto;
-}
-
-form label {
-    font-size: 1.5rem;
-}
-
-
-input,
-select,
-textarea{
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 5px;
-    border: none;
-    outline-color: #fd57bf;
-}
-
-input[type="submit"] {
-    width: initial;
-    background-color: #fd57bf;
-    color: #eee;
-    padding: 1rem 2rem;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    transition: background-color 650ms
-}
-
-input[type="submit"]::hover {
-    color: #221e3f;
-    background-color: #ffe838;
-}
-/*End contact*/
-
 /*Start footer*/
 .copyright{
     width: 100%;
     text-align: center;
-    background-color: #16162d;
+    background-color: var(--secondary-bg-color);
     padding: 2rem 0;
     position: relative;
 }
@@ -505,13 +413,13 @@ input[type="submit"]::hover {
 /*Start animations*/
 @keyframes pulse {
     0%{
-	box-shadow: 0 0 0 0 rgba(253,87,191,0.99);
+	box-shadow: 0 0 0 0 rgba(247,108,108,0.99);
     }
     70%{
-	box-shadow: 0 0 0 2rem rgba(253,87,191,0);
+	box-shadow: 0 0 0 2rem rgba(247,108,108,0);
     }
     100%{
-	box-shadow: 0 0 0 0 rgba(253,87,191,0);
+	box-shadow: 0 0 0 0 rgba(247,108,108,0);
     }
 }
 /*End animations*/
