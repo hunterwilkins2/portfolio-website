@@ -1,153 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hunter Wilkins' Portfolio</title>
-	<link rel="shortcut icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/dist/output.css">
+	<title>Hunter Wilkins Portfolio</title>
 </head>
+
 <body>
-    <header>
-	<div class="menu-toggler">
-	    <div class="bar half start"></div>
-	    <div class="bar"></div>
-	    <div class="bar half end"></div>
-	</div>
-
-	<nav class="top-nav">
-	    <ul class="nav-list">
-		<li><a href="index.html" class="nav-link">Home</a></li>
-		<li><a href="#about" class="nav-link">About</a></li>
-		<li><a href="#skills" class="nav-link">Skills</a></li>
-		<li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-	    </ul>
-	</nav>
-
-	<div class="landing-text">
-	    <h1>Hunter Wilkins</h1>
-	    <h6>University of Georgia Undergraduate | Bachelor of Computer Science</h6>
-	</div>
-    </header>
-
-    <section class="about" id="about">
-	<div class="container">
-	    <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
-		<img src="images/me.jpg" alt="">
-	    </div>
-	    <div class="about-details" data-aos="fade-left" data-aos-delay="600">
-		<div class="about-heading">
-		    <h1>About</h1>
-		    <h6>Myself</h6>
+	<header
+		class="z-10 px-10 md:px-20 lg:px-56 py-5 flex justify-between items-center bg-zinc-100 dark:bg-zinc-900 text-neutral-700 dark:text-neutral-100 sticky top-0">
+		<a href="/" class="">
+			<h1 class="font-pacifico text-3xl">Hunter</h1>
+		</a>
+		<div id="hamburger" class="flex fixed md:hidden">
+			<div class="bar half start"></div>
+			<div class="bar"></div>
+			<div class="bar half end"></div>
 		</div>
-		<p>Hi, I'm Hunter Wilkins! I am an Undergraduate at the University of Georgia, and I'm exicited to graduate with a Bachelor of Computer Science in 2022. 
-			Currently I work as a peer tutor for Computer Science and Math. Through my experiences I can bring communication of complex ideas, leadership, and creativity to your team. </p>
-		<div class="social-media">
-		    <ul>
-			<li>
-			    <a href="https://github.com/galaxyproduction" class="icon-link">
-				<i class="fab fa-github-square"></i>
-			    </a>
-			</li>
+		<div id="top-nav"
+			class="w-screen h-screen flex items-center justify-center fixed left-0 top-[-100vh] z-50 bg-zinc-300 dark:bg-zinc-900  rounded-b-full transition-[top,border-radius] duration-[650ms] ease-[cubic-bezier(1,0,0,1)]
+			md:w-auto md:h-auto md:relative md:bg-transparent dark:md:bg-transparent md:top-auto md:rounded-none md:transition-none">
+			<nav
+				class="flex flex-col items-center space-y-16 lowercase font-semibold text-lg md:flex-row md:space-y-0 md:space-x-8">
+				<a href="#about-me" class="hover:text-blue-400 dark:hover:text-blue-500">About Me</a>
+				<a href="#skills" class="hover:text-blue-400 dark:hover:text-blue-500">Skills</a>
+				<a href="#experience" class="hover:text-blue-400 dark:hover:text-blue-500">Experience</a>
+				<a href="#projects" class="hover:text-blue-400 dark:hover:text-blue-500">Projects</a>
+				<div class="">
+					<input id="dark-mode-toggle" type="checkbox" />
+					<label for="dark-mode-toggle">
+						<svg id="moon" height="800px" width="800px" version="1.1" id="Layer_1"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							viewBox="0 0 380.446 380.446" xml:space="preserve">
+							<g>
+								<path d="M236.182,0c35.976,0,69.617,9.99,98.306,27.343c-55.09,33.321-91.917,93.799-91.917,162.88
+					   s36.827,129.559,91.917,162.88c-28.689,17.353-62.33,27.343-98.306,27.343c-105.058,0-190.224-85.166-190.224-190.224
+					   S131.125,0,236.182,0z" />
+								<path d="M236.189,0.003c5.8,0,11.54,0.26,17.2,0.77c-96.95,8.74-172.93,90.22-172.93,189.45
+					   c0,99.25,76.01,180.74,172.99,189.45c-5.68,0.51-11.44,0.77-17.26,0.77c-105.06,0-190.23-85.16-190.23-190.22
+					   S131.129,0.003,236.189,0.003z" />
+							</g>
+						</svg>
+					</label>
+				</div>
+			</nav>
+		</div>
+	</header>
 
-			<li>
-			    <a href="mailto:hunter.wilkins2@gmail.com" class="icon-link">
-				<i class="fas fa-envelope"></i>
-			    </a>
-			</li>
-		    </ul>
-		</div>
-	    </div>
-	</div>
-    </section>
-
-    <section class="skills" id="skills">
-	<div class="container">
-	    <div class="section-heading">
-		<h1>Skills</h1>
-		<h6>What I can do for you</h6>
-	    </div>
-	    <div class="my-skills">
-		<div class="skill" data-aos="fade-in" data-aos-delay="300">
-		    <div class="icon-container">
-			<i class="fab fa-java"></i>
-		    </div>
-		    <h1>Java</h1>
-		    <p></p>
-		</div>
-		<div class="skill" data-aos="fade-in" data-aos-delay="600">
-		    <div class="icon-container">
-			<i class="fas fa-hashtag"></i>
-		    </div>
-		    <h1>c#</h1>
-		    <p></p>
-		</div>
-		<div class="skill" data-aos="fade-in" data-aos-delay="900">
-		    <div class="icon-container">
-			<i class="fas fa-code"></i>
+	<main>
+		<section id="hero" class="h-[calc(100vh-1.25rem)] md:grid md:grid-cols-[7fr_5fr] xl:grid-cols-[5fr_7fr]">
+			<div
+				class="h-full flex flex-col items-center md:items-start md:pl-20 lg:pl-56 justify-center bg-zinc-50 dark:bg-zinc-800 text-neutral-700 dark:text-neutral-100">
+				<div class="md:mb-20 lg:mb-40">
+					<p class="text-lg font-light">Hello, I'm</p>
+					<h1 class="uppercase text-4xl font-semibold mb-1">Hunter Wilkins</h1>
+					<h2 class="text-2xl font-medium mb-8">Full Stack Software Developer</h2>
+					<a href="images/hunter-wilkins-resume.pdf" download
+						class="inline-block px-4 py-3 bg-blue-400 dark:bg-blue-500 rounded-lg text-neutral-100 transition hover:scale-105 hover:font-semibold">Download
+						Resume</a>
+					<div class="space-x-8 text-2xl mt-6">
+						<a href="mailto:hunter.wilkins2@gmail.com"
+							class="hover:text-neutral-400 dark:hover:text-neutral-500"><i
+								class="fa-solid fa-at"></i></a>
+						<a href="https://github.com/hunterwilkins2"
+							class="hover:text-neutral-400 dark:hover:text-neutral-500"><i
+								class="fa-brands fa-github"></i></a>
+					</div>
+				</div>
 			</div>
-		    <h1>Javascript</h1>
-		    <p></p>
-		</div>
-	    </div>
-	</div>
-    </section>
+			<div id="hero-canvas" class="hidden md:block bg-blue-400 dark:bg-blue-500">
+				<img src="images/penrose.jpg"
+					class="mix-blend-lighten w-full h-[calc(100vh-1.25rem)] object-center object-cover">
+			</div>
+		</section>
 
-    <section class="portfolio" id="portfolio">
-	<div class="container">
-	    <div class="section-heading">
-		<h1>Portfolio</h1>
-		<h6>View some of my recent work</h6>
-	    </div>
-	    <div class="portfolio-item">
-		<div class="portfolio-img has-margin-right" data-aos="fade-right" data-aos-delay="300">
-		    <img src="images/iss-tracker.png" alt="">
-		</div>
-		<div class="portfolio-description" data-aos="fade-left" data-aos-delay="600">
-		    <h6>Javascript API</h6>
-		    <h1>Where is the Internation Space Station?</h1>
-		    <p>"Where is the ISS?" is a website to track the ground position of the ISS and predict its next orbit using the "Where the ISS at?" and "Mappa.js" APIs </p>
-		    <a href="https://galaxyproduction.github.io/Iss-Tracker/" class="cta" style="margin-right: 3rem;">View Site</a>
-		    <a href="https://github.com/galaxyproduction/Iss-Tracker" class="cta">View Code</a>
-		</div>
-	    </div>
-	    <div class="portfolio-item">
-		<div class="portfolio-description has-margin-right" data-aos="fade-right" data-aos-delay="900">
-		    <h6>Java Algorithms</h6>
-		    <h1>Pathfinding Visualizer</h1>
-		    <p>Pathfinding Visualizer is an interactive tool for java to demonstrate the differences between Breath First Search, Greedy Best First Search, and A* </p>
-		    <a href="https://github.com/galaxyproduction/PathfindingVisulization" class="cta">View Code</a>
-		</div>
-		<div class="portfolio-img" data-aos="fade-left" data-aos-delay="1200">
-		    <img src="images/pathfindingVisualization.png" alt="">
-		</div>
-	    </div>
-	    <div class="portfolio-item">
-		<div class="portfolio-img has-margin-right" data-aos="fade-right" data-aos-delay="1500">
-		    <img src="images/monadCode.png" alt="">
-		</div>
-		<div class="portfolio-description" data-aos="fade-left" data-aos-delay="1800">
-		    <h6>Java Library</h6>
-		    <h1>Flatmap Java</h1>
-		    <p>Flatmap Java is a java library to help Java developers explore new ways of error handling, dependency injection, and state changes with monads.</p>
-		    <a href="https://github.com/galaxyproduction/Java-Monad-Library" class="cta">View Code</a>
-		</div>
-	    </div>
-	</div>
-    </section>
+		<section id="about-me"
+			class="px-10 md:px-20 lg:px-56 pt-20 bg-zinc-200 dark:bg-zinc-900 text-neutral-700 dark:text-neutral-100 text-center">
+			<h2
+				class="relative inline-block font-semibold text-4xl mb-10
+			before:absolute before:-bottom-1 before:right-0 before:w-[80%] before:h-1 before:bg-neutral-700 dark:before:bg-neutral-100 before:rounded-md">
+				About Me
+			</h2>
 
-    <footer class="copyright">
-	<div class="up" id="up">
-	    <i class="fas fa-chevron-up"></i>
-	</div>
-	<p>Hunter Wilkins | hunter.wilkins2@gmail.com</p>
-    </footer>
+			<div
+				class="grid grid-row-2 md:grid-cols-2 items-center justify-items-center md:justify-items-normal gap-8 md:gap-0">
+				<img src="images/me.jpg" class="md:justify-self-center rounded-[50%] w-48 aspect-square object-cover">
+				<p class="md:justify-self-start text-left">
+					Hi, I'm Hunter, a Mid-Level Software Developer currently with NCR Voyix, and an alum of the
+					University of Georgia. I'm incredibily passionate for crafting APIs, refining UI/UX experiences,
+					automating processes, and ensuring scalabilty. I thrive on absorbing new knowledge and tackling
+					complex challenges, and I am constantly innovating and improving myself and the teams I'm on. I have
+					a diverse background spanning satellites, radio communications, edge-deployed fronends,
+					microservices, and mentoring, I bring a blend of adept communication, leadership, and creativity to
+					any project or team.
+				</p>
+			</div>
+		</section>
 
-	    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="main.js"></script>
+		<section id="skills" class="bg-zinc-200 dark:bg-zinc-900 text-neutral-700 dark:text-neutral-100">
+			<div class="h-40 bg-purple-400 dark:bg-purple-800 [clip-path:polygon(0_90%,100%_0,100%_100%,0_100%)]"></div>
+			<div class="px-10 md:px-40 lg:px-56 pb-16 bg-purple-400 dark:bg-purple-800 text-center">
+				<h2
+					class="relative inline-block font-semibold text-4xl mb-10
+			before:absolute before:-bottom-1 before:right-0 before:w-[80%] before:h-1 before:bg-neutral-700 dark:before:bg-neutral-100 before:rounded-md">
+					Skills
+				</h2>
+				<div class="carousel">
+					<ul
+						class="carousel-inner [&>*]:font-semibold [&>*]:bg-gray-300 [&>*]:text-neutral-700 [&>*]:px-3 [&>*]:py-2 [&>*]:rounded-lg [&>*]:whitespace-nowrap">
+						<li>JavaScript</li>
+						<li>TypeScript</li>
+						<li>c#</li>
+						<li>Java</li>
+						<li>Go</li>
+						<li>Python</li>
+						<li>React</li>
+						<li>Next.JS</li>
+						<li>RxJS</li>
+						<li>Tailwind</li>
+						<li>ASP.NET</li>
+						<li>Spring Boot</li>
+						<li>Lombok</li>
+						<li>Docker</li>
+						<li>Kubernetes</li>
+						<li>Helm</li>
+						<li>Scaffold</li>
+						<li>Terraform</li>
+						<li>Google Cloud Platform</li>
+						<li>Electron</li>
+
+						<!-- Duplicate content -->
+						<li>JavaScript</li>
+						<li>TypeScript</li>
+						<li>c#</li>
+						<li>Java</li>
+						<li>Go</li>
+						<li>Python</li>
+						<li>React</li>
+						<li>Next.JS</li>
+						<li>RxJS</li>
+						<li>Tailwind</li>
+						<li>ASP.NET</li>
+						<li>Spring Boot</li>
+						<li>Lombok</li>
+						<li>Docker</li>
+						<li>Kubernetes</li>
+						<li>Helm</li>
+						<li>Scaffold</li>
+						<li>Terraform</li>
+						<li>Google Cloud Platform</li>
+						<li>Electron</li>
+					</ul>
+				</div>
+				<div
+					class="flex flex-col md:flex-row justify-evenly items-center mt-12 space-y-12 md:space-y-0 md:space-x-12">
+					<div>
+						<i class="fa-solid fa-wand-magic-sparkles text-7xl text-pink-300 dark:text-pink-400 mb-6"></i>
+						<h2 class="font-semibold text-xl mb-3">Web Dev & Design</h2>
+						<p class="text-left text-neutral-800 dark:text-neutral-100">
+							Web development empowers me to transform my ideas and creativity into tangible realities. My
+							passion lies in crafting elegant and intuitive user experiences online. With a robust
+							foundation in React, JavaScript, and HTML templating, coupled with essentials skills in CSS
+							and design principles, I am equipped to bring concepts to life seamlessly.
+						</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-server text-7xl text-green-300 dark:text-green-500 mb-6"></i>
+						<h2 class="font-semibold text-xl mb-3">Backend Development</h2>
+						<p class="text-left text-neutral-800 dark:text-neutral-100">
+							The foundation of every front-end system hinges on a meticulously constructed backend. I
+							boast experience in Go, C#, and Java, and having tackled a spectrum of projects spanning
+							from legacy systems to pioneering microservices and edge deployments. A resilient backend is
+							forged through a suite of rigorous tests, and I offer expertise in Jest, Cypress,
+							Playwright, JUnit, SpecFlow, and Cucumber, ready to fortify any team's backend services.
+						</p>
+					</div>
+					<div>
+						<i class="fa-regular fa-lightbulb text-7xl text-yellow-400 mb-6"></i>
+						<h2 class="font-semibold text-xl mb-3">Stay Curious</h2>
+						<p class="text-left text-neutral-800 dark:text-neutral-100">
+							In the ever-evolving landscape of software development, there's always something new to
+							learn. I'm driven to develop quality code that's not just scalable and robust, but also
+							innovative and visually captivating. I'm continuously honing my skills and building new
+							ideas as both a hobby and professionally.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="experience"
+			class="px-10 md:px-40 lg:px-56 pt-20 pb-10 bg-zinc-50 dark:bg-zinc-950 text-neutral-700 dark:text-neutral-100 text-center">
+			<h2
+				class="relative inline-block font-semibold text-4xl mb-10
+			before:absolute before:-bottom-1 before:right-0 before:w-[80%] before:h-1 before:bg-neutral-700 dark:before:bg-neutral-100 before:rounded-md">
+				Experience
+			</h2>
+
+			<div class="flex justify-center">
+				<div class="flex flex-col items-start space-y-8">
+					<div class="space-x-4 flex items-center">
+						<span>2019</span>
+						<i class="fa-solid fa-user-tie bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Math Peer Tutor at <a href="https://www.augusta.edu/academicsuccess/"
+								class="text-blue-400 dark:text-blue-500">Augusta University</a></span>
+					</div>
+					<div class="space-x-4 flex items-center">
+						<span>2020</span>
+						<i class="fa-solid fa-user-tie bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Computer Science and Math Peer Tutor at <a href="https://www.augusta.edu/academicsuccess/"
+								class="text-blue-400 dark:text-blue-500">Augusta University</a></span>
+					</div>
+					<div class="space-x-4 flex items-center">
+						<span>2021</span>
+						<i class="fa-solid fa-user-tie bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Lead Computer Science Peer Tutor at <a href="https://dae.uga.edu/"
+								class="text-blue-400 dark:text-blue-500">University of Georgia</a></span>
+					</div>
+					<div class="space-x-4 flex items-center">
+						<span>2021</span>
+						<i class="fa-solid fa-user-tie bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Lead Software Developer & Ground Station Operator at <a href="https://smallsat.uga.edu/"
+								class="text-blue-400 dark:text-blue-500">SSRL</a></span>
+					</div>
+					<div class="space-x-4 flex items-center">
+						<span>2022</span>
+						<i class="fa-solid fa-user-graduate bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Graduated from University of Georgia</span>
+					</div>
+					<div class="space-x-4 flex items-center">
+						<span>2022</span>
+						<i class="fa-solid fa-user-tie bg-blue-400 dark:bg-blue-500 rounded-full p-3"></i>
+						<span>Software Engineer II at <a href="https://www.ncrvoyix.com/"
+								class="text-blue-400 dark:text-blue-500">NCR Voyix</a></span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="bg-zinc-50 dark:bg-zinc-950 text-neutral-700 dark:text-neutral-100">
+			<div class="h-40 bg-blue-400 dark:bg-blue-500 [clip-path:polygon(0_0,100%_90%,100%_100%,0_100%)]"></div>
+			<div class="px-10 md:px-40 lg:px-56 pb-16 bg-blue-400 dark:bg-blue-500 text-center">
+				<h2
+					class="relative inline-block font-semibold text-4xl mb-10
+			before:absolute before:-bottom-1 before:right-0 before:w-[80%] before:h-1 before:bg-neutral-700 dark:before:bg-neutral-100 before:rounded-md">
+					Projects
+				</h2>
+
+				<div class="flex flex-col space-y-16 items-center text-left text-neutral-700">
+					<div class="p-8 bg-gray-200 rounded-md w-[75%] shadow-xl">
+						<div>
+							<h1 class="font-semibold text-2xl inline-block">Go Kanban</h1>
+							<a href="https://github.com/hunterwilkins2/go-kanban"
+								class="inline-block text-blue-400 dark:text-blue-500 font-semibold"> - Github</a>
+							<p class="font-light mb-6">Go Web Server</p>
+						</div>
+						<div class="space-y-4">
+							<img src="images/go-kanban.png">
+							<p>
+								Go Kanban is a trello inspired kanban board written in Go, Tailwind, htmx, and templ.
+								The Kanban board support seamless drag-and-drop of each column and the element within
+								the columns. Users are able to create multiple boards and customize the number and names
+								of columns, and users can share their board with other to efficiently colaborate on
+								projects with others.
+							</p>
+						</div>
+					</div>
+					<div class="p-8 bg-gray-200 rounded-md w-[75%] shadow-xl">
+						<div>
+							<h1 class="font-semibold text-2xl inline-block">RSV</h1>
+							<a href="https://github.com/hunterwilkins2/rsv"
+								class="inline-block text-blue-400 dark:text-blue-500 font-semibold"> - Github</a>
+							<p class="font-light mb-6">Go Library</p>
+						</div>
+						<p>
+							RSV is an encoding library written in Go to encode and decode Row of String Value (RSV)
+							formatted files. Simular to CSV, RSV is able to encode/decode arbitrary tabular data;
+							however, unlike CSV files, RSV is stored as a binary format and is design to support any
+							Unicode character and doesn't have character collision between seperators. This library was
+							designed to be fast, memory efficient, and easy to use.
+						</p>
+					</div>
+
+					<div class="p-8 bg-gray-200 rounded-md w-[75%] shadow-xl">
+						<div>
+							<h1 class="font-semibold text-2xl inline-block">Trolly</h1>
+							<a href="https://github.com/hunterwilkins2/trolly"
+								class="inline-block text-blue-400 dark:text-blue-500 font-semibold"> - Github</a>
+							<p class="font-light mb-6">Go Web Server</p>
+						</div>
+						<div class="grid grid-row-2 lg:grid-cols-2 gap-4">
+							<img src="images/trolly-mobile.png" class="order-1 lg:-order-1">
+							<p>
+								Trolly is a mobile site designed for managing grocery lists and estimating grocery
+								costs. Trolly tracks users purchases to allow users to quicky add recently and commonly
+								bought items. Trolly is powered by Go and htmx and supports inline editing of items and
+								prices, active search to quickly add and remove items, and inline
+								parsing of user input to quickly add items without filling out forms, making editing and
+								managing grocery lists from your phone a breeze.
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer
+		class="px-10 md:px-20 lg:px-56 py-10 bg-zinc-100 dark:bg-zinc-900 text-neutral-700 dark:text-neutral-100 flex items-center justify-between">
+		<p class="text-sm font-semibold">&copy; Hunter Wilkins 2024</p>
+		<div class="space-x-2 md:space-x-8 text-2xl">
+			<a href="images/hunter-wilkins-resume.pdf" download
+				class="hover:text-neutral-400 dark:hover:text-neutral-500"><i class="fa-regular fa-file-pdf"></i></a>
+			<a href="mailto:hunter.wilkins2@gmail.com" class="hover:text-neutral-400 dark:hover:text-neutral-500"><i
+					class="fa-solid fa-at"></i></a>
+			<a href="https://github.com/hunterwilkins2" class="hover:text-neutral-400 dark:hover:text-neutral-500"><i
+					class="fa-brands fa-github"></i></a>
+		</div>
+	</footer>
+
+	<script src="js/dark-mode.js"></script>
+	<script src="js/hamburger.js"></script>
 </body>
+
 </html>
