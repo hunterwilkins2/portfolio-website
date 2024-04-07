@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    transition: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+}
+
+label[for="dark-mode-toggle"] {
+    width: theme('width.16');
+    height: theme('height.8');
+    position: relative;
+    display: block;
+    background: theme('backgroundColor.zinc.50');
+    border-radius: theme('borderRadius.full');
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.4), inset 0px -3px 10px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+label[for="dark-mode-toggle"]:after {
+    content: "";
+    width: theme('width.6');
+    height: theme('width.6');
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+label[for="dark-mode-toggle"]:active:after {
+    width: calc(theme('width.6') + 8px);
+}
+
+label[for="dark-mode-toggle"] svg {
+    position: absolute;
+    width: theme('width.4');
+    height: theme('height.4');
+    top: 8px;
+    left: 6px;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+#dark-mode-toggle:checked+label[for="dark-mode-toggle"] svg {
+    left: calc(theme('width.16') - theme('width.4') - 6px);
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+label[for="dark-mode-toggle"] path:nth-child(1) {
+    fill: theme('backgroundColor.yellow.400');
+}
+
+label[for="dark-mode-toggle"] path:nth-child(2) {
+    fill: theme('backgroundColor.yellow.600');
+}
+
+#dark-mode-toggle:checked+label[for="dark-mode-toggle"] path:nth-child(1) {
+    fill: theme('backgroundColor.zinc.300');
+}
+
+#dark-mode-toggle:checked+label[for="dark-mode-toggle"] path:nth-child(2) {
+    fill: theme('backgroundColor.zinc.600');
+}
+
+#dark-mode-toggle {
+    display: none;
+}
+
+#dark-mode-toggle:checked+label {
+    background: theme('backgroundColor.zinc.800');
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.4), inset 0px -3px 10px rgba(255, 255, 255, 0.2);
+}
+
+#dark-mode-toggle:checked+label:after {
+    left: calc(theme('width.16') - 4px);
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+#hamburger {
+    position: relative;
+    width: theme('spacing.8');
+    height: theme('spacing.6');
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 650ms ease-out;
+}
+
+#hamburger.open {
+    transform: rotate(-45deg);
+}
+
+.bar {
+    background-color: theme('backgroundColor.neutral.700');
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.dark .bar {
+    background-color: theme('backgroundColor.neutral.100');
+}
+
+.bar.start {
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57)
+}
+
+.open .bar.start {
+    transform: rotate(-90deg) translate(-0.1rem, -0.05rem) scaleX(50%);
+}
+
+.bar.end {
+    align-self: flex-end;
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.end {
+    transform: rotate(-90deg) translate(0.15em, -0.05rem) scaleX(50%);
+}
+
+.carousel {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+.carousel .carousel-inner {
+    width: max-content;
+    padding: 1em 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1em;
+    list-style: none;
+    animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+    to {
+        transform: translate(calc(-50% - 0.5em));
+    }
+}
